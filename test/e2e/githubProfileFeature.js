@@ -23,4 +23,8 @@ describe('Github Profile finder', function() {
     var num = 30 // change hard-coded number to variable
     expect(element(by.className('results')).getText()).toEqual(num + ' profiles found')
   });
+
+  it('does not show the number of profiles found before a user types something', function() {
+    expect(element(by.className('results')).isPresent()).toBe(false);
+  });
 });
